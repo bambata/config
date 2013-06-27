@@ -49,3 +49,6 @@
 [submodule "bundlgit"]
 	path = bundlgit
 	url = https://github.com/sontek/rope-vim.git
+[submodule "bundle/ropevim"]
+	path = bundle/ropevim
+	url = https://github.com/sontek/rope-vim.git
