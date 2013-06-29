@@ -33,7 +33,7 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-colors django
+colors morning 
 
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -46,7 +46,7 @@ set number
 
 set completeopt=menuone,longest,preview
 
-let g:snippets_dir="~/.vim/snippets/"
+let g:snippets_dir=$HOME.'/.vim/snippets/'
 
 let g:pep8_map='<leader>!'
 
@@ -55,7 +55,3 @@ let g:pyflakes_use_quickfix = 0
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 let g:SuperTabMappingTabLiteral = '<tab>'
-
-
-call ExtractSnipsFile(g:snippets_dir.'django.snippets', 'python')
-call ExtractSnipsFile(g:snippets_dir.'python.snippets', 'python')
