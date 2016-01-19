@@ -1,9 +1,0 @@
-Configuration complète et reproductible de mon Vim
-
-pour l'installation, simplement 
-
-1. effectuer un clone du repository dans le répertoire .vim
-2. soft linker le fichier .vimrc dans le home de votre user
-3. ~/.vim/bundle/command-t folder and run 'rake make'
-
-voilà
