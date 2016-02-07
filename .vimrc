@@ -26,9 +26,14 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'einars/js-beautify'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 " Colorscheme
 Plugin 'mkarmona/colorsbox'
 Plugin 'hewo/vim-colorscheme-deepsea'
@@ -50,6 +55,12 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 set t_Co=256 " Needed by deepsea and powerline
 colorscheme colorsbox-material
 set hidden
+set nowrap
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" grep
+command! -nargs=+ MyGrep execute 'silent grep! <args>' | copen
+map <leader>g :MyGrep <C-R>=expand("<cword>")<CR><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab config set smartindent
@@ -63,6 +74,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map config
@@ -93,6 +105,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Up and Down for lines
+noremap <A-K> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+noremap <A-J> ddp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cscope config
@@ -132,7 +148,6 @@ if executable("ag")
    set grepformat=%f:%l:%c:%m
    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
    let g:ctrlp_use_caching = 0
-   map <leader>g :grep <C-R>=expand("<cword>")<CR><CR>
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,12 +162,12 @@ let g:vim_markdown_folding_disabled=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#buffer_nr_format = '%s '
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#show_close_button = 0
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#buffer_nr_format = '%s '
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline_powerline_fonts = 1
 map <leader>1 :b 1<CR>
 map <leader>2 :b 2<CR>
 map <leader>3 :b 3<CR>
