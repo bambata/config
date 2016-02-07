@@ -57,6 +57,7 @@ colorscheme colorsbox-material
 set hidden
 set nowrap
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " grep
 command! -nargs=+ MyGrep execute 'silent grep! <args>' | copen
@@ -107,8 +108,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Up and Down for lines
-noremap <A-K> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
-noremap <A-J> ddp
+nnoremap <Alt-K> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+nnoremap <Alt-J> ddp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cscope config
@@ -159,6 +160,12 @@ au FileType python set tabstop=4
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin vim-markdown config
 let g:vim_markdown_folding_disabled=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin snipmate config
+imap <C-\> <Plug>snipMateNextOrTrigger
+smap <C-\> <Plug>snipMateNextOrTrigger
+imap <C-\><leader> <Plug>snipMateShow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim airline
