@@ -1,0 +1,23 @@
+[user]
+	name = bambata
+	email = julien@mycs.com
+[push]
+	default = simple
+[heroku]
+[alias]
+	co = checkout
+  ci = commit
+  s = status
+  br = branch
+  pl = pull
+  ps = push
+  aa = !git add --all
+  ac = !git add --all && git commit -m
+  branch-name = !git rev-parse --abbrev-ref HEAD
+  pub = !git push origin $(git branch-name)
+  pubf = !git push origin $(git branch-name) -f
+  mpub = "!sh -c \"git merge --ff-only $1 && git pub\" -"
+  rom = rebase origin/master
+  rsq = "!sh -c \"git rebase -i HEAD~$1\" -"
+[diff]
+	tool = opendiff
