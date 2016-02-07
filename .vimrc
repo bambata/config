@@ -108,8 +108,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Up and Down for lines
-nnoremap <Alt-K> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
-nnoremap <Alt-J> ddp
+map <S-K> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+map <S-J> ddp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cscope config
