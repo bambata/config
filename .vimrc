@@ -28,6 +28,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'einars/js-beautify'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'editorconfig/editorconfig-vim'
 " Colorscheme
 Plugin 'mkarmona/colorsbox'
 Plugin 'hewo/vim-colorscheme-deepsea'
