@@ -56,11 +56,12 @@ set t_Co=256 " Needed by deepsea and powerline
 colorscheme colorsbox-material
 set hidden
 set nowrap
+set autoread
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " grep
-command! -nargs=+ MyGrep execute 'silent grep! <args>' | copen
+command! -nargs=+ MyGrep execute 'grep! <args>' | redraw! | copen
 map <leader>g :MyGrep <C-R>=expand("<cword>")<CR><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,8 +109,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Up and Down for lines
-map <S-K> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
-map <S-J> ddp
+map <Alt-K> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+map <Alt-J> ddp
+
+" Resize the buffers
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cscope config
